@@ -11,10 +11,11 @@ dotenv.config();
 
 const server = express();
 
-server.use('/posts', postRoutes);
 server.use(bodyParser.json({ limit: "30mb", exceeded: true }));
 server.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 server.use(cors());
+
+server.use('/posts', postRoutes);
 
 const CONNECTION_URL = process.env.CONNECTION_URL;
 const PORT = process.env.PORT || 5000;
