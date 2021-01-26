@@ -15,6 +15,11 @@ server.use(bodyParser.json({ limit: "30mb", exceeded: true }));
 server.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 server.use(cors());
 
+server.get('/', (req, res) => {
+    const messageOfTheDay = process.env.MOTD || "Per aspera ad astra"
+    res.send(`<h2>${messageOfTheDay}</h2>`)
+})
+
 server.use('/posts', postRoutes);
 
 const CONNECTION_URL = process.env.CONNECTION_URL;
