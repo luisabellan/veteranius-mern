@@ -13,8 +13,7 @@ export default makeStyles((theme) => ({
     color: 'rgba(0,183,255, 1)',
   },
   image: {
-    marginLeft: '1px',
-    backgroundColor: 'rgba(0,183,255, 1)',
+    backgroundColor: 'rgba(0,169,255, 1)',
   },
   [theme.breakpoints.down('sm')]: {
     mainContainer: {
