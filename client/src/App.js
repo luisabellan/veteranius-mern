@@ -14,9 +14,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log("useEffect called");
     dispatch(getPosts())
-    console.log(dispatch(getPosts()))
   },[currentId, dispatch])
 
   
