@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Container, AppBar, Typography, Grow, Grid } from "@material-ui/core";
+import Image from "material-ui-image";
 import { useDispatch } from 'react-redux';
 import { getPosts } from './actions/posts';
 import Posts from "./components/Posts/Posts";
@@ -13,16 +14,18 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    console.log("useEffect called");
     dispatch(getPosts())
-  }, [currentId, dispatch])
+    console.log(dispatch(getPosts()))
+  },[currentId, dispatch])
 
   
   return (
     <Container maxWidth="lg">
       <AppBar className={classes.appBar} position="static" color="inherit">
         <Typography className={classes.heading} variant="h2" align="center">Memories</Typography>
-        <img className={classes.image} src={memories} alt="icon" height="60" />
       </AppBar>
+      <Image className={classes.image} src={memories} alt="icon" aspectRatio={10/1} />
       <Grow in>
         <Container>
           <Grid container justify="space-between" alignItems="stretch" spacing={3}>
