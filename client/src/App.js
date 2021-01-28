@@ -25,10 +25,10 @@ function App() {
       <AppBar className={classes.appBar} position="static" color="inherit">
         <Typography className={classes.heading} variant="h2" align="center">Memories</Typography>
       </AppBar>
-      <Image className={classes.image} src={memories} alt="icon" aspectRatio={10/1} />
+      <Image className={classes.image} src={memories} alt="icon" aspectRatio={10/1}  />
       <Grow in>
         <Container>
-          <Grid container justify="space-between" alignItems="stretch" spacing={3}>
+          <Grid className={classes.mainContainer} container justify="space-between" alignItems="stretch" spacing={3}>
             <Grid item xs={12} sm={7}>
               <Posts setCurrentId={setCurrentId} />
             </Grid>
